@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, User, LayoutDashboard } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Logo from '../assets/logo.png'; // Make sure this path is correct
+import Logo from '../assets/logo.png'; 
 
 export default function DashboardNavbar({id}) {
   const [isOpen, setIsOpen] = useState(false);
