@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import DashboardNavbar from '../../UserDashBoardComponents/DashNavbar';
+import DashboardNavbar from '../../UserDashBoardComponents/DashNavbar'
 import MainDash from '../../UserDashBoardComponents/mainDash';
 import NewReportForm from '../../UserDashBoardComponents/NewReport';
 import MyReports from '../../UserDashBoardComponents/MyReposts';
