@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 const initialReportState = {
   location: { latitude: '', longitude: '' },
 };
-
+// JI
 // Blob configurations and styling for the background
 const blobConfigurations = [
     { classes: 'w-[650px] h-[650px] top-[-10%] left-[-15%] opacity-80', color: '#cfe0ff' },

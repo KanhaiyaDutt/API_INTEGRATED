@@ -44,6 +44,7 @@ export default function MainDash() {
           />
         ))}
 
+{/* L; */}
         {/* Static concentric rings/shadow */}
         <div
           className="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20"
