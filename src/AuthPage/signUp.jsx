@@ -12,6 +12,7 @@ export default function SignUpForm({ isActive, onSignInClick }) {
     const [messageType, setMessageType] = useState('');
     const navigate = useNavigate();
 
+    const baseAPIUrl = 'http://127.0.0.1:8001';
 
     // sign up handler:
     const handleSignUp = async (event) => {
@@ -27,29 +28,29 @@ export default function SignUpForm({ isActive, onSignInClick }) {
     
     
         try {
-          // const response = await fetch('sign up url', {
-          //   method: 'POST',
-          //   body: formData,
-          // });
+          const response = await fetch(`${baseAPIUrl}/login`, {
+            method: 'POST',
+            body: formData,
+          });
     
-          // const result = await response.json();
+          const result = await response.json();
     
-          // if (!response.ok) {
-          //   //  corresponding errror
-          //   setMessage(result.detail || 'Failed to sign up.');
-          //   setMessageType('error');
-          //   return;
-          // }
+          if (!response.ok) {
+            //  corresponding errror
+            setMessage(result.detail || 'Failed to sign up.');
+            setMessageType('error');
+            return;
+          }
     
           // Handle success
           // Get the user ID from the response
-          // const userId = result.user_id;
+          const userId = result.user_id;
           // eg.
-          const userId = "7878";
-          // setMessage(`Account created successfully! User ID: ${result.user_id}`);
-          setMessage(`Account created successfully! User ID: ${userId}`);
+          // const userId = "7878";
+          setMessage(`Account created successfully! User ID: ${result.user_id}`);
+          // setMessage(`Account created successfully! User ID: ${userId}`);
           setMessageType('success');
-
+          
           // Session details: 
           // localStorage.setItem('token', result.access_token);
           // console.log('signUp successful:', result.access_token);
@@ -64,7 +65,9 @@ export default function SignUpForm({ isActive, onSignInClick }) {
           setPassword('');
           setEmail('');
 
-          // navigate(`/dashboard/${userId}`);
+
+          navigate(`/dashboard/`);
+          
     
         } catch (err) {
           setMessage(err.message);

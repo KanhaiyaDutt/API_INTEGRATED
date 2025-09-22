@@ -92,10 +92,10 @@ export default function CombinedHeroSection({ t }) {
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
       >
-        {/* 2. Use the 't' function for the animated title */}
+        {/* 2. No  't' function for the animated title */}
         <TypeAnimation
           sequence={[
-            t('hero.title'), // Translated text
+            "Guardians of the Coast", 
             3000,
           ]}
           wrapper="h1"

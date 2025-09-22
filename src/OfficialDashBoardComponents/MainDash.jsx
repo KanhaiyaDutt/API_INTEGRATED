@@ -9,9 +9,8 @@ import RightPanel from './DashCompo/CurrentReport'
 import CenterMap from './DashCompo/MapView'
 import AnalyticsDashboard from './DashCompo/Analytics'
 
-function Dashboard() {
+function Dashboard({theme, toggleTheme}) {
     const [activeView, setActiveView] = useState('map');
-    const [theme, setTheme] = useState('dark');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDetailsOpen, setIsDetailsOpen] = useState(false);
     const [rightPanelState, setRightPanelState] = useState('open');
@@ -32,9 +31,7 @@ function Dashboard() {
         });
     }, []); // Empty dependency array means this function is created only once.
 
-    const toggleTheme = useCallback(() => {
-        setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
-    }, []);
+    
 
     const handleViewOnMap = useCallback((coordinates) => {
         console.log("Received coordinates in parent:", coordinates);
